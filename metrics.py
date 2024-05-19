@@ -35,7 +35,7 @@ def dice_coef(target, output, sigmoid=True, cut_off=0.5):
     target_ = target > cut_off
     output_ = output > cut_off
     intersection = (output_ & target_).sum()
-    return (2.0 * intersection + smooth) / (output.sum() + target.sum() + smooth)
+    return (2.0 * intersection + smooth) / (output_.sum() + target_.sum() + smooth)
 
 #acc
 def sensivity(target, output, sigmoid=True, cut_off=0.5):
